@@ -1,0 +1,9 @@
+@import '../../../styles/colorpackage.scss';
+
+.ArticleAd {
+	.articleAdContent {
+		width: 240px;
+		height: 200px;
+		background-color: $background-color-tag ;
+	}
+}

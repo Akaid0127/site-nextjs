@@ -1,0 +1,16 @@
+@import '../../../../styles/colorpackage.scss';
+
+.ArticleItem {
+	.articleItemContent {
+		height: 150px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 10px;
+		cursor: pointer;
+		border-bottom: 1px solid $border-color-lighter;
+		&:hover{
+			background-color: $background-color-hover;
+		}
+	}
+}

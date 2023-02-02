@@ -1,0 +1,27 @@
+@import '../../../styles/colorpackage.scss';
+
+.ArticleList {
+	.articleListContent {
+		width: 680px;
+		background-color: $background-color-tag;
+
+		.sift {
+			height: 50px;
+			display: flex;
+			align-items: center;
+			color: $font-color-secondary-text;
+			font-size: 14px;
+			border-bottom: 1px solid $border-color-lighter;
+			:nth-child(n+2) {
+				border-left: 1px solid $border-color-light;
+			}
+			li {
+				cursor: pointer;
+				padding:0 20px;
+				&:hover{
+					color: $font-color-major;
+				}
+			}
+		}
+	}
+}

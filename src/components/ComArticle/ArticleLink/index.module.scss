@@ -1,0 +1,9 @@
+@import '../../../styles/colorpackage.scss';
+
+.ArticleLink {
+	.articleLinkContent {
+		width: 240px;
+		height: 80px;
+		background-color: $background-color-tag ;
+	}
+}
