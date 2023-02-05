@@ -1,0 +1,65 @@
+@import './colorpackage.scss';
+
+@mixin bg_color(){
+    background: $background-color-main;
+    [data-theme=light] & {
+        background: $background-color-main;
+    }
+    [data-theme=dark] & {
+        background: $background-color-main-dark;
+    }
+}
+@mixin bg-tag(){
+    background: $background-color-tag;
+    [data-theme=light] & {
+        background: $background-color-tag;
+    }
+    [data-theme=dark] & {
+        background: $background-color-tag-dark;
+    }
+}
+@mixin font-home-tag(){
+   color: $font-color-home-tag;
+    [data-theme=light] & {
+        color: $font-color-home-tag;
+    }
+    [data-theme=dark] & {
+        color: $font-color-home-tag-dark;
+    }
+}
+@mixin border-light(){
+    border:1px solid $border-color-light;
+    [data-theme=light] & {
+        border:1px solid $border-color-light;
+    }
+    [data-theme=dark] & {
+        border:1px solid $border-color-light-dark;
+    }
+}
+@mixin border-lighter(){
+    background: $border-color-lighter;
+    [data-theme=light] & {
+        background: $border-color-lighter;
+    }
+    [data-theme=dark] & {
+        background: $border-color-lighter-dark;
+    }
+}
+@mixin font-placeholder-text(){
+    color: $font-color-placeholder-text;
+    [data-theme=light] & {
+        color: $font-color-placeholder-text;
+    }
+    [data-theme=dark] & {
+        color: $font-color-placeholder-text-dark;
+    }
+}
+@mixin logo(){
+    background: url('../../public/static/juejinlogo.png');
+    [data-theme=light] & {
+        background: url('../../public/static/juejinlogo.png');
+    }
+    [data-theme=dark] & {
+        background: url('../../public/static/juejinlogo-darker.png');
+    }
+}

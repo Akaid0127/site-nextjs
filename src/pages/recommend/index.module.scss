@@ -1,8 +1,23 @@
 @import '../../styles/colorpackage.scss';
+@import '../../styles/minxin.scss';
+
+@mixin iphone(){
+	@media screen and (max-width:767px){
+		@content;
+	}
+
+}
+
+@mixin ipad(){
+	@media screen and (min-width:768px) and (max-width:1200px){
+		@content;
+	}
+
+}
 
 .Recommend {
 	.recommendContent {
-		background-color: $background-color-main;
+		@include bg_color();
 
 		.top {}
 
@@ -18,6 +33,10 @@
 			.right {
 				display: flex;
 				flex-direction: column;
+
+				@include iphone(){
+					display: none;
+				}
 
 				.right1 {
 					margin-bottom: 16px;
