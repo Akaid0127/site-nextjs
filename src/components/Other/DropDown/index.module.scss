@@ -1,0 +1,60 @@
+@import '../../../styles/colorpackage.scss';
+
+
+.drop {
+	font-family: "Montserrat";
+
+	.dropContent {
+		user-select: none;
+		width: 80px;
+		cursor: pointer;
+		position: relative;
+		.select {
+			color: $font-color-home-tag;
+			font-weight: 500;
+			font-size: 13.6px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.downOutlined{
+				font-size: 10px;
+			}
+		}
+
+		.optionsList {
+			background-color: $background-color-main;
+			position: absolute;
+			width: 100%;
+			border-radius: 6px;
+			margin-top: 14px;
+			padding: 0 10px;
+			max-height: 180px;
+			overflow-y: auto;
+			transition: .4s linear .2s;
+			height: 0;
+			z-index: 99;
+			.option {
+				padding: 8px 0;
+				font-weight: 500;
+				font-size: 14px;
+				transition: .3s ease-in-out;
+
+				&:hover {
+					color: $font-color-major;
+				}
+			}
+		}
+
+		// 滚动条背景
+		.optionsList::-webkit-scrollbar {
+			width: 4px;
+			background-color: $background-color-main;
+		}
+
+		// 滚动条颜色
+		.optionsList::-webkit-scrollbar-thumb {
+			background-color: $btn-color-normal;
+		}
+
+	}
+}

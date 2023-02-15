@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
+import { LikeFilled, MessageFilled, StarFilled, ThunderboltFilled, WarningFilled, PlusSquareFilled } from '@ant-design/icons'
 import Head from 'next/head'
-import particularCss from './index.module.scss'
+// 引入组件
 import HomeNav from '../../components/HomeNav';
 import DetailText from '../../components/ComDetail/DetailText'
 import DetailAdmin from '../../components/ComDetail/DetailAdmin'
 import DetailRelated from '../../components/ComDetail/DetailRelated'
+import DetailDirect from '../../components/ComDetail/DetailDirect'
+import particularCss from './index.module.scss'
 
+
+/*
+	遗留
+	跳转屏闪
+*/
+
+// 页面2-文章详情页
 export default class Particular extends Component {
 
 	bodyScale = () => {
@@ -39,15 +49,21 @@ export default class Particular extends Component {
 							<div className={particularCss.main}>
 								<div className={particularCss.left}>
 									{/* 文章点赞、浏览量等状态栏 */}
-
+									<div className={particularCss.top}>
+										<div><LikeFilled /></div>
+										<div><MessageFilled /></div>
+										<div><StarFilled /></div>
+										<div><ThunderboltFilled /></div>
+									</div>
+									<div className={particularCss.line}></div>
+									<div className={particularCss.bottom}>
+										<div><WarningFilled /></div>
+										<div><PlusSquareFilled /></div>
+									</div>
 								</div>
 								<div className={particularCss.middle}>
-									{/* 
-								文章详情展示 
-								后期想传值md文档给你，然后直接展示md文档
-								前期写静态界面先写死
-							*/}
-									<DetailText></DetailText>
+									{/* 文章md */}
+									<DetailText ></DetailText>
 								</div>
 								<div className={particularCss.right}>
 									<div className={particularCss.right1}>
@@ -58,14 +74,16 @@ export default class Particular extends Component {
 										{/* 相关文章 */}
 										<DetailRelated></DetailRelated>
 									</div>
+									<div className={particularCss.right3}>
+										{/* 文章目录 */}
+										<DetailDirect></DetailDirect>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</main>
-
 			</>
-
 		)
 	}
 }

@@ -5,5 +5,33 @@
 		width: 240px;
 		height: 200px;
 		background-color: $background-color-tag ;
+		background: url('../../../../public/static/ad01.png');
+		background-size: cover;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+
+		.ad {
+			color: $basic-color-white;
+			background-color: #{$font-color-secondary-text}80;
+			font-size: 10px;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 45px;
+			height: 18px;
+			border-radius: 3px;
+
+
+			&:hover {
+				width: 70px;
+				background-color:#{darken($font-color-secondary-text, 20%)}80;
+				&::before {
+					content: "投放"
+				}
+			}
+		}
 	}
 }

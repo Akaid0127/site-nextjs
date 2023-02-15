@@ -1,67 +1,92 @@
 import React, { Component } from 'react'
-import Image from 'next/image'
-import { SearchOutlined, BellFilled, BulbOutlined,BulbFilled} from '@ant-design/icons'
-import homeNavCss from './index.module.scss'
 import { useState } from 'react'
+// antd图标
+import { SearchOutlined, BellFilled, BulbOutlined, BulbFilled, DownOutlined } from '@ant-design/icons'
+// mobx
+import { inject, observer } from 'mobx-react'
+// 组件
+import DropDown from '../../components/Other/DropDown'
+import homeNavCss from './index.module.scss'
+
 
 //主题切换组件
-function Theme(){
-	const [isActive,setIsActive] = useState(false);
+function Theme() {
+	const [isActive, setIsActive] = useState(false);
 	const changeDark = () => {
 		setIsActive(!isActive)
-		document.documentElement.setAttribute('data-theme','dark')
-		console.log('黑了');
+		document.documentElement.setAttribute('data-theme', 'dark')
+		console.log('dark theme');
 	}
-	const changeLight = ()=>{
+	const changeLight = () => {
 		setIsActive(!isActive)
-		document.documentElement.setAttribute('data-theme','light');
-		console.log('白了');
+		document.documentElement.setAttribute('data-theme', 'light');
+		console.log('white theme');
 	}
 	return (
 		<div className={homeNavCss.theme}>
-						<span >{isActive?<BulbOutlined onClick={changeLight} className={homeNavCss.icon} />:
-						<BulbFilled onClick={changeDark} className={homeNavCss.icon}/>} </span>
-						{/* <span onClick={this.changeTheme}><BulbOutlined className={homeNavCss.icon} /></span> */}
-					</div>
+			<span >
+				{isActive ?
+					<BulbOutlined onClick={changeLight} className={homeNavCss.icon} /> :
+					<BulbFilled onClick={changeDark} className={homeNavCss.icon} />}
+			</span>
+			{/* <span onClick={this.changeTheme}><BulbOutlined className={homeNavCss.icon} /></span> */}
+		</div>
 	);
 }
 
-export default class HomeNav extends Component {
+// 顶部导航栏组件
+@inject("NavStore")
+@observer
+class HomeNav extends Component {
 	state = {
 		// nextjs不支持动态载入，因为需要计算渲染时间
 		//  imageLogo: logoLigher,
-		tagList: [
-			{ id: 1, nav_item: "首页", nav_mark: false, mark_name: "" },
-			{ id: 2, nav_item: "沸点", nav_mark: false, mark_name: "" },
-			{ id: 3, nav_item: "课程", nav_mark: false, mark_name: "" },
-			{ id: 4, nav_item: "直播", nav_mark: false, mark_name: "" },
-			{ id: 5, nav_item: "活动", nav_mark: false, mark_name: "" },
-			{ id: 6, nav_item: "竞赛", nav_mark: false, mark_name: "" },
-			{ id: 7, nav_item: "商城", nav_mark: false, mark_name: "" },
-			{ id: 8, nav_item: "App", nav_mark: false, mark_name: "" },
-			{ id: 9, nav_item: "插件", nav_mark: false, mark_name: "" },
-		]
+		tagList: [],
 	}
 
-	
+	componentDidMount() {
+		const { NavStore } = this.props
+		NavStore.getNavArr()
+			.then((result) => {
+				this.setState({
+					tagList: result ? result : NavStore.navArr
+				})
+			})
+
+	}
 
 	render() {
-		const { imageLogo, tagList } = this.state
-		
+		const { tagList } = this.state
+
 		return (
 			<div className={homeNavCss.HomeNav}>
 				<div className={homeNavCss.homeNavContent}>
 					<div className={homeNavCss.log}>
 						{/* <Image src={imageLogo} alt="" height={22} />  */}
-						 <div className={homeNavCss.img}/> 
+						<div className={homeNavCss.img} />
 					</div>
+
 					<div className={homeNavCss.tag}>
 						{
 							tagList.map((item) => {
-								return <div key={item.id}>{item.nav_item}</div>
+								return (
+									<div className={homeNavCss.tagItem} key={item.id}>
+										{item.nav_item}
+										{
+											item.nav_mark === true ? (
+												<div className={homeNavCss.stamp}>{item.mark_name}</div>
+											) : null
+										}
+									</div>
+								)
 							})
 						}
 					</div>
+
+					<div className={homeNavCss.drop}>
+						<DropDown txtName={"所有标签"} dropList={tagList} dropItemName={"nav_item"}></DropDown>
+					</div>
+
 					<div className={homeNavCss.search}>
 						<input type="text" placeholder="探索稀土掘金" />
 						<span><SearchOutlined /></span>
@@ -78,9 +103,10 @@ export default class HomeNav extends Component {
 						<span ><BellFilled className={homeNavCss.icon} /></span>
 					</div>
 
-					<Theme/>
+					<Theme />
 				</div>
-			</div>
+			</div >
 		)
 	}
 }
+export default HomeNav

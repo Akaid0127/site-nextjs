@@ -2,8 +2,32 @@
 
 .ArticleLink {
 	.articleLinkContent {
+		background-color: $background-color-tag ;
 		width: 240px;
 		height: 80px;
-		background-color: $background-color-tag ;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.img {
+			margin-top: 4px;
+			margin-right: 16px;
+		}
+
+		.txt {
+			.top {
+				color: $font-color-primary-text;
+				font-weight: 500;
+				font-size: 14px;
+				line-height: 22px;
+			}
+
+			.bottom {
+				color: $font-color-secondary-text;
+				margin-top: 6px;
+				font-size: 12px;
+				line-height: 20px;
+			}
+		}
 	}
 }

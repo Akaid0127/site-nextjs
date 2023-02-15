@@ -2,6 +2,39 @@
 
 .DetailAdmin {
 	.detailAdminContent {
+		padding: 20px;
+		display: flex;
+		align-items: center;
+		.image {
+			width: 55px;
+			height: 60px;
+			margin-right: 16px;
+			display: flex;
+			align-items: center;
 
+			.radius {
+				border-radius: 50%;
+			}
+		}
+
+		.detail {
+			display: flex;
+			flex-direction: column;
+
+			.name {
+				color: $font-color-primary-text;
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 24px;
+
+			}
+
+			.describle {
+				color: $font-color-secondary-text;
+				font-size: 14px;
+				margin-top: 2px;
+				line-height: 22px;
+			}
+		}
 	}
 }

@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import React, { Component } from 'react'
+// 引入首页
 import Recommend from './recommend';
+
 
 export default class Home extends Component {
 
@@ -26,12 +28,12 @@ export default class Home extends Component {
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
 				<main>
-					<div className='Home'>
-						<div className='home-content'>
-							{/* Recommend首页 */}
-							<Recommend></Recommend>
+						<div className='Home'>
+							<div className='home-content'>
+								{/* Recommend首页 */}
+								<Recommend></Recommend>
+							</div>
 						</div>
-					</div>
 				</main>
 			</>
 		)

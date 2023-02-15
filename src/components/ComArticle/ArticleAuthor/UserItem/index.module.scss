@@ -1,0 +1,44 @@
+@import '../../../../styles/colorpackage.scss';
+
+.UserItem {
+	flex: 1 1 auto;
+
+	&:hover {
+		background-color: $background-color-hover;
+	}
+
+	.userItemContent {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding-left: 14px;
+
+		.image {
+			width: 55px;
+			height: 60px;
+			margin-right: 10px;
+			display: flex;
+			align-items: center;
+			.radius{
+			border-radius: 50%;
+			}
+		}
+
+		.detail {
+			display: flex;
+			flex-direction: column;
+
+			.name {
+				color: $font-color-primary-text;
+				font-size: 14px;
+				font-weight: 400;
+				margin-bottom: 5px;
+			}
+
+			.describle {
+				color: $font-color-secondary-text;
+				font-size: 12px;
+			}
+		}
+	}
+}

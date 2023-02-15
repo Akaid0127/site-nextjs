@@ -1,0 +1,24 @@
+@import '../../../styles/colorpackage.scss';
+
+.DetailDirect {
+	.detailDirectContent {
+		padding: 16px;
+		.title {
+			color: $font-color-primary-text;
+			border-bottom: 1px solid $border-color-light;
+			padding-bottom: 16px;
+			margin-bottom: 16px;
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 500;
+		}
+
+		.nav {
+			display: flex;
+			
+			.navItem {
+				
+			}
+		}
+	}
+}
