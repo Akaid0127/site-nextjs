@@ -1,12 +1,13 @@
 @import '../../../styles/colorpackage.scss';
+@import '../../../styles/minxin.scss';
 
 .DetailRelated {
 	.detailRelatedContent {
 		padding: 16px;
 
 		.head {
-			color: $font-color-primary-text;
-			border-bottom: 1px solid $border-color-light;
+			@include font-color-primary-text();
+			@include border-bottom-light();
 			padding-bottom: 16px;
 			margin-bottom: 16px;
 			font-size: 16px;
@@ -21,7 +22,7 @@
 
 
 			.artiName {
-				color: $font-color-primary-text;
+				@include font-color-primary-text();
 				line-height: 30px;
 				font-size: 16px;
 				font-weight: 400;
@@ -29,7 +30,7 @@
 			}
 
 			.artistatus {
-				color: $font-color-secondary-text;
+				@include font-color-secondary-text();
 				display: flex;
 				font-size: 14px;
 				line-height: 22px;

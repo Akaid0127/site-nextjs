@@ -1,4 +1,6 @@
 @import '../../../styles/colorpackage.scss';
+@import '../../../styles/minxin.scss';
+
 
 .DetailAdmin {
 	.detailAdminContent {
@@ -22,7 +24,7 @@
 			flex-direction: column;
 
 			.name {
-				color: $font-color-primary-text;
+				@include font-color-primary-text();
 				font-size: 16px;
 				font-weight: 500;
 				line-height: 24px;
@@ -30,7 +32,7 @@
 			}
 
 			.describle {
-				color: $font-color-secondary-text;
+				@include font-color-secondary-text();
 				font-size: 14px;
 				margin-top: 2px;
 				line-height: 22px;

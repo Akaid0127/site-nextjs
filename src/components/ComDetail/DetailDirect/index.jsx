@@ -47,13 +47,12 @@ class DetailDirect extends Component {
 				// 添加a标签
 				let tag_a = document.createElement('a');
 				tag_a.setAttribute('id', '#' + index);
-				tag_a.setAttribute('class', 'anchor-title');
 				tag_a.setAttribute('href', '#' + index);
-				tag_a.innerText = ' '
+				tag_a.innerText = ' ';
 				let title = {
 					href: '#' + index,
 					title: item.innerText,
-					key: index
+					key: index,
 				};
 				titleArrNew.push(title);
 				item.appendChild(tag_a);
@@ -64,6 +63,7 @@ class DetailDirect extends Component {
 			titleArr: titleArrNew
 		})
 	}
+
 
 	// 点击锚点
 	handleClick = (e, link)=>{
@@ -77,6 +77,7 @@ class DetailDirect extends Component {
 		}
 	}
 
+
 	componentDidMount() {
 		this.mdGet()
 	}
@@ -87,9 +88,8 @@ class DetailDirect extends Component {
 			<div className={detailDirectCss.DetailDirect}>
 				<div className={detailDirectCss.detailDirectContent} >
 					<div className={detailDirectCss.title}>目录</div>
-					<div className='content-box'>
+					<div className={detailDirectCss.markdownNav}>
 						<Anchor
-							className='markdown-nav'
 							affix={false}
 							onClick={this.handleClick}
 							items={titleArr}

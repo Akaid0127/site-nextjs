@@ -1,24 +1,31 @@
 @import '../../../styles/colorpackage.scss';
+@import '../../../styles/minxin.scss';
 
 .DetailDirect {
 	.detailDirectContent {
 		padding: 16px;
 		.title {
-			color: $font-color-primary-text;
-			border-bottom: 1px solid $border-color-light;
+			@include font-color-primary-text();
+			@include border-bottom-light();
 			padding-bottom: 16px;
 			margin-bottom: 16px;
 			font-size: 16px;
 			line-height: 24px;
 			font-weight: 500;
 		}
+		.markdownNav a{
+			@include font-color-primary-text();
+		}
+		
 
 		.nav {
 			display: flex;
 			
 			.navItem {
 				
+				
 			}
 		}
+		
 	}
 }

@@ -2,6 +2,7 @@
 $background-color-tag: #FFFFFF; // 导航、标签管理、文章内容、右侧组件背景色
 $background-color-tag-dark:#050505;
 $background-color-hover: #FAFAFA; // 鼠标hover变灰
+$background-color-hover-dark: #171717;
 $background-color-main: #F4F5F5; // 整体背景色
 $background-color-main-dark:#303133;//dark主题背景色
 $background-color-smalltag: #ee502f; // ·邀请有礼·标签背景色
@@ -9,9 +10,11 @@ $background-color-smalltag: #ee502f; // ·邀请有礼·标签背景色
 
 // 字体色
 $font-color-primary-text: #303133;
+$font-color-primary-text-dark:#d2d7e1;
 $font-color-regular-text: #606266;
 
 $font-color-secondary-text: #909090;
+$font-color-secondary-text-dark: #c5c4c4;
 $font-color-placeholder-text: #C0C4CC;
 $font-color-placeholder-text-dark:#343537;
 $font-color-major: #1E80FF;
@@ -22,7 +25,7 @@ $font-color-dark-text:#FFFFFF;//dark主题字体颜色
 // 边框色
 $border-color-base: #DCDFE6;
 $border-color-light: #E4E7ED;
-$border-color-light-dark:#babdc4;
+$border-color-light-dark:#a3a5aa;
 $border-color-lighter: #EBEEF5;
 $border-color-lighter-dark:#030303;
 $border-color-extralight: #F2F6FC;

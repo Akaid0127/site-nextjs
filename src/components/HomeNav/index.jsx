@@ -8,19 +8,18 @@ import { inject, observer } from 'mobx-react'
 import DropDown from '../../components/Other/DropDown'
 import homeNavCss from './index.module.scss'
 
-
 //主题切换组件
 function Theme() {
 	const [isActive, setIsActive] = useState(false);
 	const changeDark = () => {
 		setIsActive(!isActive)
 		document.documentElement.setAttribute('data-theme', 'dark')
-		console.log('dark theme');
+		
 	}
 	const changeLight = () => {
 		setIsActive(!isActive)
 		document.documentElement.setAttribute('data-theme', 'light');
-		console.log('white theme');
+		
 	}
 	return (
 		<div className={homeNavCss.theme}>
@@ -105,7 +104,7 @@ class HomeNav extends Component {
 
 					<Theme />
 				</div>
-			</div >
+			</div>
 		)
 	}
 }

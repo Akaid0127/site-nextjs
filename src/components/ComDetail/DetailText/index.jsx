@@ -9,14 +9,13 @@ import { inject, observer } from 'mobx-react'
 import Image from 'next/image'
 // 获取文章内容
 import { articleGetTxt } from '../../../utils/data'
-// github-md风格
-import 'github-markdown-css/github-markdown.css'
 import detailTextCss from './index.module.scss'
 
 // 详情页文章组件
 @inject("ArticlesStore", "UsersStore")
 @observer
 class DetailText extends Component {
+ 
 	state = {
 		currentArticle: {
 			"id": 1,
@@ -41,7 +40,7 @@ class DetailText extends Component {
 		},
 		mdArticle: "",
 	}
-
+	
 	// 获取文章、文章详情、作者
 	mdShow = () => {
 		const {  ArticlesStore, UsersStore } = this.props
@@ -61,15 +60,18 @@ class DetailText extends Component {
 						})
 					// 更新文章详情
 					this.setState({ currentArticle: result[0], })
+
 				})
 		}
 	}
+	
 
 	// nextImage loader函数
 	myLoader = ({ src, width, quality }) => {
 		return `${src}?w=${width}&q=${quality || 75}`
 	}
-
+	
+	
 	componentDidMount() {
 		this.mdShow()
 	}
@@ -104,22 +106,21 @@ class DetailText extends Component {
 					</div>
 
 					<div className={detailTextCss.cover}>
-						<Image
+						<img
 							className={detailTextCss.coverImg}
 							loader={this.myLoader}
-							priority={true}
 							src={currentArticle.article_img}
-							alt={""}
-							width={710}
-							height={420}
+							
 						/>
+						
 					</div>
-					<div className={detailTextCss.md}>
+					<div className={detailTextCss.md} >
 						<ReactMarkdown
 							className="markdown-body"
 							children={mdArticle}
 							remarkPlugin s={[remarkGfm]}
 						/>
+						
 					</div>
 
 				</div>

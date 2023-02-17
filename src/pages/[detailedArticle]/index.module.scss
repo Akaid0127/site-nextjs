@@ -1,10 +1,32 @@
 @import '../../styles/colorpackage.scss';
+@import '../../styles/minxin.scss';
+
+@mixin Web(){
+	@media screen and (min-width:1201px){
+		@content;
+	}
+
+}
+
+
+@mixin iphone(){
+	@media screen and (max-width:767px){
+		@content;
+	}
+
+}
+
+@mixin ipad(){
+	@media screen and (min-width:768px) and (max-width:1200px){
+		@content;
+	}
+
+}
 
 .Particular {
 	.particularContent {
 		width: 100%;
-		background-color: $background-color-main;
-
+		@include bg_color();
 		.top {
 			margin-bottom: 20px;
 		}
@@ -14,6 +36,12 @@
 			justify-content: center;
 
 			.left {
+				@include ipad(){
+					display: none;
+				}
+				@include iphone(){
+					display: none;
+				}
 				width: 80px;
 				height: 450px;
 				margin-right: 20px;
@@ -41,7 +69,7 @@
 					margin-bottom: 8px;
 
 					div {
-						background-color: $background-color-tag;
+						@include bg-tag();
 						margin-bottom: 20px;
 						width: 48px;
 						height: 48px;
@@ -56,14 +84,14 @@
 
 				.line {
 					width: 35px;
-					border-bottom: 1px solid $border-color-base;
+					@include border-bottom-light();
 				}
 
 				.bottom {
 					margin-top: 24px;
 
 					div {
-						background-color: $background-color-tag;
+						@include bg-tag();
 						margin-bottom: 20px;
 						width: 48px;
 						height: 48px;
@@ -78,29 +106,39 @@
 			}
 
 			.middle {
-				width: 780px;
-				min-height: 1200px;
-				background-color: $background-color-tag;
-				margin-right: 20px;
+				width: 100%;
+				@include Web(){
+					width: 780px;
+					min-height: 1200px;
+					margin-right: 20px;
+				}
+				@include bg-tag();
+				
 			}
 
 			.right {
+				@include ipad(){
+					display: none;
+				}
+				@include iphone(){
+					display: none;
+				}
 				.right1 {
 					width: 300px;
 					height: 100px;
-					background-color: $background-color-tag;
+					@include bg-tag();
 					margin-bottom: 20px;
 				}
 
 				.right2 {
 					width: 300px;
-					background-color: $background-color-tag;
+					@include bg-tag();
 					margin-bottom: 20px;
 				}
 
 				.right3 {
 					width: 300px;
-					background-color: $background-color-tag;
+					@include bg-tag();
 				}
 			}
 		}

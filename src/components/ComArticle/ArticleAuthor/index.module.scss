@@ -1,16 +1,17 @@
 @import '../../../styles/colorpackage.scss';
+@import '../../../styles/minxin.scss';
 
 .ArticleAuthor {
 	.articleAuthorContent {
 		width: 240px;
 		height: 300px;
-		background-color: $background-color-tag ;
+		@include bg-tag();
 		display: flex;
 		flex-direction: column;
 
 		.title {
-			border-bottom: 1px solid $border-color-lighter;
-			color: $font-color-primary-text;
+			@include border-bottom-light();
+			@include font-color-primary-text();
 			font-size: 14px;
 			height: 40px;
 			display: flex;
@@ -19,7 +20,7 @@
 		}
 
 		.list {
-			border-bottom: 1px solid $border-color-lighter;
+			@include border-bottom-light();
 			flex: auto;
 			display: flex;
 			flex-direction: column;

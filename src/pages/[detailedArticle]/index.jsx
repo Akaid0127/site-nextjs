@@ -18,17 +18,17 @@ import particularCss from './index.module.scss'
 // 页面2-文章详情页
 export default class Particular extends Component {
 
-	bodyScale = () => {
-		let devicewidth = document.documentElement.clientWidth; //获取当前分辨率下的可是区域宽度
-		let widthScale = devicewidth / 1707; // 分母——设计稿的尺寸
-		document.body.style.zoom = widthScale; //放大缩小相应倍数
-		let heightScale = document.documentElement.clientHeight;
-		document.body.style.height = heightScale;
-	}
+	// bodyScale = () => {
+	// 	let devicewidth = document.documentElement.clientWidth; //获取当前分辨率下的可是区域宽度
+	// 	let widthScale = devicewidth / 1707; // 分母——设计稿的尺寸
+	// 	document.body.style.zoom = widthScale; //放大缩小相应倍数
+	// 	let heightScale = document.documentElement.clientHeight;
+	// 	document.body.style.height = heightScale;
+	// }
 
-	componentDidMount() {
-		this.bodyScale()
-	}
+	// componentDidMount() {
+	// 	this.bodyScale()
+	// }
 
 	render() {
 		return (

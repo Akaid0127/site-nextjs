@@ -1,24 +1,59 @@
 @import '../../../styles/colorpackage.scss';
 
+@import '../../../styles/minxin.scss';
+
+@mixin Web(){
+	@media screen and (min-width:1201px){
+		@content;
+	}
+
+}
+
+@mixin iphone(){
+	@media screen and (max-width:767px){
+		@content;
+	}
+
+}
+
+@mixin ipad(){
+	@media screen and (min-width:768px) and (max-width:1200px){
+		@content;
+	}
+
+}
+
 .ArticleSort {
 	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
 	background-color: $background-color-tag;
 
 	.articleSortContent {
-		color: $font-color-home-tag;
+		@include bg-tag();
 		user-select: none;	
 		width: 100%;
 		height: 46px;
 		display: flex;
-		justify-content: center;
+		@include Web(){
+			justify-content: center;
+		}
 		align-items: center;
-
 		font-weight: 500;
 		font-size: 13.6px;
 		user-select: none;
 
+	
+		
+
 		.tag {
-			width: 490px;
+			// width: 490px;
+			@include ipad(){
+				margin-left: 20px;
+			}
+			@include iphone(){
+				margin-left: 15px;
+				
+			}
+
 			height: 60px;
 			// 超出隐藏
 			white-space: nowrap;
@@ -26,6 +61,7 @@
 
 
 			div {
+				@include font-home-tag();
 				float: left;
 				height: 60px;
 				margin-right: 20px;
@@ -40,13 +76,29 @@
 		}
 
 		.drop {
-			float: left;
-			margin-right: 350px;
+			@include Web(){
+				float: left;
+				margin-right: 350px;
+			}
+			@include ipad(){
+				display: none;
+			}
+			@include iphone(){
+				display: none;
+
+			}
+			
 		}
 
 		.tagManage {
 			float: right;
-
+			@include font-home-tag();
+			@include ipad(){
+				display: none;
+			}
+			@include iphone(){
+				display: none;
+			}
 			&:hover {
 				color: $font-color-major;
 			}

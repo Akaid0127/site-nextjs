@@ -1,10 +1,11 @@
 @import '../../../../styles/colorpackage.scss';
+@import '../../../../styles/minxin.scss';
 
 .UserItem {
 	flex: 1 1 auto;
 
 	&:hover {
-		background-color: $background-color-hover;
+		@include background-color-hover();
 	}
 
 	.userItemContent {
@@ -29,7 +30,7 @@
 			flex-direction: column;
 
 			.name {
-				color: $font-color-primary-text;
+				@include font-color-primary-text();
 				font-size: 14px;
 				font-weight: 400;
 				margin-bottom: 5px;

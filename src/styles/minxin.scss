@@ -63,3 +63,51 @@
         background: url('../../public/static/juejinlogo-darker.png');
     }
 }
+@mixin font-color-secondary-text(){
+    color: $font-color-secondary-text;
+    [data-theme=light] & {
+        color: $font-color-secondary-text;
+    }
+    [data-theme=dark] & {
+        color: $font-color-secondary-text-dark;
+    }
+}
+@mixin background-color-hover(){
+    background-color: $background-color-hover;
+    [data-theme=light] & {
+        background-color:$background-color-hover;
+    }
+    [data-theme=dark] & {
+        background-color: $background-color-hover-dark;
+    }
+}
+@mixin font-color-primary-text(){
+    color: $font-color-primary-text;
+    [data-theme=light] & {
+        color: $font-color-primary-text;
+    }
+    [data-theme=dark] & {
+        color: $font-color-primary-text-dark;
+    }
+}
+@mixin border-bottom-light(){
+    border-bottom:1px solid $border-color-light;
+    [data-theme=light] & {
+        border-bottom:1px solid $border-color-light;
+    }
+    [data-theme=dark] & {
+        border-bottom:1px solid $border-color-light-dark;
+    }
+}
+@mixin md-background(){
+    color: #24292f;
+    background-color: #ffffff;
+    [data-theme=light] & {
+        color: #24292f;
+        background-color:#ffffff;
+    }
+    [data-theme=dark] & {
+        color:#c9d1d9 ;
+        background-color: #0d1117;
+    }
+}

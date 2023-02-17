@@ -1,17 +1,45 @@
 @import '../../../styles/colorpackage.scss';
+@import '../../../styles/minxin.scss';
+
+@mixin Web(){
+	@media screen and (min-width:1201px){
+		@content;
+	}
+
+}
+
+@mixin iphone(){
+	@media screen and (max-width:767px){
+		@content;
+	}
+
+}
+
+@mixin ipad(){
+	@media screen and (min-width:768px) and (max-width:1200px){
+		@content;
+	}
+
+}
 
 .ArticleList {
 	.articleListContent {
 		width: 680px;
-		background-color: $background-color-tag;
+		@include ipad(){
+			width: 100%;
+		}
+		@include iphone(){
+			width: 100%;
+		}
+		@include bg-tag();
 
 		.sift {
 			height: 50px;
 			display: flex;
 			align-items: center;
-			color: $font-color-secondary-text;
+			@include font-color-secondary-text();
 			font-size: 14px;
-			border-bottom: 1px solid $border-color-lighter;
+			@include border-bottom-light();
 			:nth-child(n+2) {
 				border-left: 1px solid $border-color-light;
 			}
